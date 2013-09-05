@@ -17,7 +17,6 @@ Description: PS is an interactive program for performing power and sample size
  specific alternative hypothesis can be detected with a given sample size,
  or the specific alternative hypotheses that can be detected with a given
  power and sample size.
-
  The PS program can produce graphs to explore the relationships
  between power, sample size and detectable alternative
  hypotheses. It is often helpful to hold one of these variables
