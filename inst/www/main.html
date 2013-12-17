@@ -2,17 +2,19 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <script src="shared/jquery.js" type="text/javascript"></script>
-  <script src="shared/shiny.js" type="text/javascript"></script>
+
   <link rel="stylesheet" type="text/css" href="shared/shiny.css"/>
   <link rel="stylesheet" type="text/css" href="shared/slider/css/jquery.slider.min.css"/>
-  <script src="shared/slider/js/jquery.slider.min.js"></script>
   <link rel="stylesheet" type="text/css" href="shared/bootstrap/css/bootstrap.min.css"/>
-  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href="shared/bootstrap/css/bootstrap-responsive.min.css"/>
-
   <link rel="stylesheet" type="text/css" href="colorbox/colorbox.css"/>
+  <link rel="stylesheet" type="text/css" href="app.css"/>
+
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/slider/js/jquery.slider.min.js"></script>
+  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
   <script src="colorbox/jquery.colorbox-min.js"></script>
 
   <title>PS.shiny</title>
@@ -50,14 +52,27 @@
         </li>
       </ul>
       <div class="tab-content">
-        <div class="tab-pane active" id="tab-help"></div>
-        <div class="tab-pane" id="tab-survival"></div>
-        <div class="tab-pane" id="tab-ttest"></div>
-        <div class="tab-pane" id="tab-regression-1"></div>
-        <div class="tab-pane" id="tab-regression-2"></div>
-        <div class="tab-pane" id="tab-dichotomous"></div>
-        <div class="tab-pane" id="tab-dichotomous"></div>
-        <div class="tab-pane" id="tab-mantel-haenszel"></div>
+        <div class="tab-pane" id="tab-survival">
+          <div id="survival" class="shiny-html-output"></div>
+        </div>
+        <div class="tab-pane" id="tab-ttest">
+          <div id="ttest" class="shiny-html-output"></div>
+        </div>
+        <div class="tab-pane" id="tab-regression-1">
+          <div id="regression1" class="shiny-html-output"></div>
+        </div>
+        <div class="tab-pane" id="tab-regression-2">
+          <div id="regression2" class="shiny-html-output"></div>
+        </div>
+        <div class="tab-pane" id="tab-dichotomous">
+          <div id="regression3" class="shiny-html-output"></div>
+        </div>
+        <div class="tab-pane" id="tab-dichotomous">
+          <div id="dichotomous" class="shiny-html-output"></div>
+        </div>
+        <div class="tab-pane" id="tab-mantel-haenszel">
+          <div id="mantel-haenzel" class="shiny-html-output"></div>
+        </div>
       </div>
     </div>
   </div>
