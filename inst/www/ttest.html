@@ -3,7 +3,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a class="iframe" href="html/pshe306s.htm">What do you want to know?</a>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<select name="outputq">
+<select id='ttestmeth' name="outputq">
 <option></option>
 <option>Sample Size</option>
 <option>Power</option>
@@ -20,7 +20,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a class="iframe" href="html/pshe93ji.htm">Paired or independent?</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<select name="designq">
+<select id='ttestdesign' name="designq">
 <option></option>
 <option>Paired</option>
 <option>Independent</option>
@@ -32,22 +32,87 @@
 <span style="font-weight: bold;">Input</span><br>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<a class="iframe" href="html/pshe3flg.htm">&alpha;</a> <input name="alpha"> &nbsp;&nbsp;&nbsp;
-<a class="iframe" href="html/pshe3flg.htm">&delta;</a> <input name="delta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<a class="btn btn-primary btn-sm" href="#">Calculate</a><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<a class="iframe" href="html/pshe3flg.htm">n</a> <input name="n">&nbsp;&nbsp;&nbsp;
-<a class="iframe" href="html/pshe3flg.htm">&sigma;</a> <input name="sigma">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<a class="btn btn-primary btn-sm" href="#">Graphs</a><br>
-<a class="iframe" href="html/pshe3flg.htm">power</a> <input name="power">&nbsp;&nbsp; 
-<a class="iframe" href="html/pshe3flg.htm">&mu;</a> <input name="mu"><br>
+<table>
+<tr>
+<td><div id="ttesta"><a class="iframe" href="html/pshe3flg.htm">&alpha;</a><input name="alpha"></div></td>
+<td><div id="ttestd"><a class="iframe" href="html/pshe3flg.htm">&delta;</a> <input name="delta"></div></td>
+<td><a class="btn btn-primary btn-sm" href="#">Calculate</a></td>
+</tr>
+<tr>
+<td><div id="ttestn"><a class="iframe" href="html/pshe3flg.htm">n</a> <input name="n"></div></td>
+<td><div id="ttestsigma"><a class="iframe" href="html/pshe3flg.htm">&sigma;</a> <input name="sigma"></div></td>
+<td><a class="btn btn-primary btn-sm" href="#">Graphs</a></td>
+</tr>
+<tr>
+<td><div id="ttestpower"><a class="iframe" href="html/pshe3flg.htm">power</a><input name="power"></div></td>
+<td><div id="ttestmu"><a class="iframe" href="html/pshe3flg.htm">&mu;</a><input name="mu"></div></td>
+<td></td>
+</tr>
+</table>
 <br>
 <hr class="app">
 <br>
 <span style="font-weight: bold;">Description</span><br>
 <script type="text/javascript">
 (function(){
-  $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+  hideShowInputs = function(a,n,power,d,sigma,mu){
+    if (a==1){
+      $('#ttesta').show();
+    } else {
+      $('#ttesta').hide();
+    }
+    if (n==1){
+      $('#ttestn').show();
+    } else {
+      $('#ttestn').hide();
+    }
+    if (power==1){
+      $('#ttestpower').show();
+    } else {
+      $('#ttestpower').hide();
+    }
+    if (d==1){
+      $('#ttestd').show();
+    } else {
+      $('#ttestd').hide();
+    }
+    if (sigma==1){
+      $('#ttestsigma').show();
+    } else {
+      $('#ttestsigma').hide();
+    }
+    if (mu==1){
+      $('#ttestmu').show();
+    } else {
+      $('#ttestmu').hide();
+    }
+  }
+  alterInput = function(meth,design){
+    if (meth == "Sample Size" && design == "Paired"){
+      hideShowInputs(1,0,1,1,1,0);
+    } else if (meth == "Sample Size" && design =="Independent"){
+      hideShowInputs(1,0,1,1,1,1);
+    } else if (meth == "Power" && design == "Paired"){
+      hideShowInputs(1,1,0,1,1,0);
+    } else if (meth == "Power" && design == "Independent"){
+      hideShowInputs(1,1,0,1,1,1);
+    } else if (meth == "Detectable Alternative" && design == "Paired"){
+      hideShowInputs(1,1,1,0,1,0);
+    } else if (meth == "Detectable Alternative" && design == "Independent"){
+      hideShowInputs(1,1,1,0,1,1);
+    } else if (meth == "" || design == ""){
+      hideShowInputs(1,1,1,1,1,1);
+    }
+  };
+  $('#ttestmeth').on('change', function() {
+    meth = $('#ttestmeth');
+    design = $('#ttestdesign');
+    alterInput(meth.val(),design.val());
+  });
+  $('#ttestdesign').on('change',function() {
+    meth = $('#ttestmeth');
+    design = $('#ttestdesign');
+    alterInput(meth.val(),design.val());
+  });
 }())
 </script>
