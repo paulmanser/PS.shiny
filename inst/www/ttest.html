@@ -3,7 +3,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a class="iframe" href="html/pshe306s.htm">What do you want to know?</a>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<select id='ttestmeth' name="outputq">
+<select id="ttestmeth">
 <option></option>
 <option>Sample Size</option>
 <option>Power</option>
@@ -11,6 +11,7 @@
 </select>
 <br>
 <br>
+<pre id="ttestoutput" class="shiny-text-output"></pre> 
 <br>
 <br>
 <hr class="app">
@@ -20,7 +21,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a class="iframe" href="html/pshe93ji.htm">Paired or independent?</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<select id='ttestdesign' name="designq">
+<select id='ttestdesign'>
 <option></option>
 <option>Paired</option>
 <option>Independent</option>
@@ -34,21 +35,19 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <table>
 <tr>
-<td><div id="ttesta"><a class="iframe" href="html/pshe3flg.htm">&alpha;</a><input name="alpha"></div></td>
-<td><div id="ttestd"><a class="iframe" href="html/pshe3flg.htm">&delta;</a> <input name="delta"></div></td>
-<td><a class="btn btn-primary btn-sm" href="#">Calculate</a></td>
+<td><div id="ttesta"><a class="iframe" href="html/pshe3flg.htm">&alpha;</a><input type="number" name="alpha"></div></td>
+<td><div id="ttestd"><a class="iframe" href="html/pshe3flg.htm">&delta;</a> <input type="number" name="delta"></div></td>
 </tr>
 <tr>
-<td><div id="ttestn"><a class="iframe" href="html/pshe3flg.htm">n</a> <input name="n"></div></td>
-<td><div id="ttestsigma"><a class="iframe" href="html/pshe3flg.htm">&sigma;</a> <input name="sigma"></div></td>
-<td><a class="btn btn-primary btn-sm" href="#">Graphs</a></td>
+<td><div id="ttestn"><a class="iframe" href="html/pshe3flg.htm">n</a> <input type="number" name="n"></div></td>
+<td><div id="ttestsigma"><a class="iframe" href="html/pshe3flg.htm">&sigma;</a> <input type="number" name="sigma"></div></td>
 </tr>
 <tr>
-<td><div id="ttestpower"><a class="iframe" href="html/pshe3flg.htm">power</a><input name="power"></div></td>
-<td><div id="ttestmu"><a class="iframe" href="html/pshe3flg.htm">&mu;</a><input name="mu"></div></td>
-<td></td>
+<td><div id="ttestpower"><a class="iframe" href="html/pshe3flg.htm">power</a><input type="number" name="power"></div></td>
+<td><div id="ttestmu"><a class="iframe" href="html/pshe3flg.htm">&mu;</a><input type="number" name="mu"></div></td>
 </tr>
 </table>
+<a class="btn btn-primary btn-sm" href="#">Graphs</a>
 <br>
 <hr class="app">
 <br>
